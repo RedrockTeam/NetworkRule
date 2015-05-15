@@ -42,8 +42,14 @@
 
     <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<style>
+		body{
+			background-color: #F2F2F2;
+			padding: 0 20px;
+		}
+
 		.container{
-			margin: 0 20px 100px;
+			overflow: hidden;
+			margin: 0 auto 100px;
 		}
 
 		.content{
@@ -59,21 +65,23 @@
 		}
 
 		.vote-group{
-			width: 350px;
+			width: 100%;
+			position: absolute;
+			left: 0;
 			margin: 20px auto 0;
 		}
 
 		.vote{
 			float: left;
-			width: 130px;
+			width: 50%;
 			color: #68B235;
-			line-height: 38px;
+			/*line-height: 38px;*/
 			cursor: pointer;
+			padding: 0 12px;
 		}
 
 		.good{
 			text-align: right;
-  			margin-right: 25px;
 		}
 
 		.vote img{
@@ -133,12 +141,17 @@
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script>
     	!function($){
-    		$('.good').click(function(){
+    		var voted = false;
+    		$('.good').on('click', function(){
+    			if(voted) return;
     			$.post(location.href, {vt: 1}, handlerer("good"));
+    			voted = true;
     		});
 
-    		$('.bad').click(function(){
+    		$('.bad').on('click', function(){
+    			if(voted) return;
     			$.post(location.href, {vt: 2}, handlerer("bad"));
+    			voted = true;
     		});
 
     		function handlerer(type){
