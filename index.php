@@ -38,7 +38,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>重庆邮电大学学生网络文明行为规范</title>
+    <title>重邮学生网络文明行为规范</title>
 
     <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<style>
@@ -126,12 +126,12 @@
 		<div class="row vote-group">
 			<div class="vote good">
 				<img src="good.jpg" height="38" width="36">
-				支持
+				有道理
 				<span class="vote-number"><?=$info['good']?></span>
 			</div>
 			<div class="vote bad">
 				<img src="bad.jpg" height="38" width="36">
-				反对
+				不全面
 				<span class="vote-number"><?=$info['bad']?></span>
 			</div>
 		</div>
